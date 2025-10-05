@@ -189,13 +189,14 @@
                 // RECUERDA CAMBIAR ESTOS VALORES
                 secret: '09876xyz', 
                 id: 'Minciencias_presentacion', 
-                url: 'https://reveal-js-multiplex-ccjbegmaii.now.sh'
+                url: 'https://reveal-multiplex.glitch.me'
             },
 
             plugins: [
                 RevealNotes,
                 RevealMarkdown,
                 RevealHighlight,
+                { src: 'https://reveal-multiplex.glitch.me/socket.io/socket.io.js', async: true },
                 { src: 'plugin/multiplex/master.js', async: true },
                 { src: 'plugin/multiplex/client.js', async: true }
             ]
