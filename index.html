@@ -12,109 +12,155 @@
     <link rel="stylesheet" href="plugin/highlight/monokai.css">
 
     <style>
+        /* Paleta de colores suaves y de alto contraste */
         :root {
-            --r-background-color: #f0f4f8;
-            --r-main-color: #333d47;
-            --r-heading-color: #21303e;
-            --r-main-font-size: 40px;
+            --r-background-color: #f0f4f8; /* Fondo principal: Gris azulado muy claro */
+            --r-main-color: #333d47;       /* Texto principal: Gris oscuro */
+            --r-heading-color: #0d1b2a;     /* Títulos: Azul casi negro */
+            --r-accent-color: #2a9d8f;      /* Acento principal: Verde azulado */
+            --r-dark-background: #0d1b2a;   /* Fondo oscuro para diapositivas clave */
+            --r-light-text: #e0e1dd;        /* Texto claro sobre fondo oscuro */
         }
-        .reveal .slides section h1 { font-size: 2.5em; color: var(--r-heading-color); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5em; }
-        .reveal .slides section h2 { font-size: 1.8em; color: var(--r-main-color); margin-bottom: 0.8em; }
-        .reveal .slides section p, .reveal .slides section ul { font-size: 1.1em; line-height: 1.5; text-align: left; margin-bottom: 0.8em; color: var(--r-main-color); }
-        .reveal .slides section ul { list-style: none; padding-left: 0; }
-        .reveal .slides section ul li { position: relative; padding-left: 1.5em; margin-bottom: 0.5em; }
-        .reveal .slides section ul li:before { content: '•'; color: #2196F3; position: absolute; left: 0; font-weight: bold; }
-        .reveal .slides section .timeline { display: flex; flex-direction: column; gap: 20px; margin-top: 50px; padding: 20px; background-color: #e3f2fd; border-radius: 10px; }
-        .reveal .slides section .timeline-item { display: flex; align-items: flex-start; text-align: left; position: relative; padding-left: 100px; }
-        .reveal .slides section .timeline-item::before { content: ''; position: absolute; left: 45px; top: 0; bottom: 0; width: 2px; background-color: #90CAF9; }
-        .reveal .slides section .timeline-item:last-child::before { display: none; }
-        .reveal .slides section .timeline-item .year { position: absolute; left: 0; top: 0; font-weight: bold; font-size: 1.4em; color: #1976D2; background-color: #BBDEFB; border-radius: 50%; width: 80px; height: 80px; display: flex; justify-content: center; align-items: center; z-index: 1; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .reveal .slides section .timeline-item .description { flex: 1; background-color: #ffffff; padding: 15px 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-left: 20px; }
-        .reveal .slides section .timeline-item .description h3 { font-size: 1.2em; color: #3f51b5; margin-bottom: 0.5em; }
-        .reveal .slides section .timeline-item .description p { font-size: 0.95em; color: #546E7A; margin-bottom: 0; }
+
+        .reveal .slides section {
+            text-align: center;
+        }
+        
+        /* Estilo para el año o hito principal de la diapositiva */
+        .reveal .slides section .milestone {
+            font-size: 6em;
+            font-weight: bold;
+            color: var(--r-accent-color);
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para el título del evento */
+        .reveal .slides section .event-title {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: var(--r-heading-color);
+            margin-bottom: 30px;
+        }
+        
+        /* Estilo para la descripción */
+        .reveal .slides section .description {
+            font-size: 1.25em;
+            line-height: 1.5;
+            width: 75%;
+            margin: 0 auto; /* Centra el párrafo */
+            color: var(--r-main-color);
+            text-align: center;
+        }
+
+        /* Estilos específicos para diapositivas con fondo oscuro */
+        .reveal .slides section.dark-slide {
+            color: var(--r-light-text);
+        }
+        .reveal .slides section.dark-slide h1,
+        .reveal .slides section.dark-slide h2,
+        .reveal .slides section.dark-slide .event-title {
+            color: var(--r-light-text);
+        }
+        .reveal .slides section.dark-slide .milestone {
+            color: #fca311; /* Un acento dorado para contraste */
+        }
+        .reveal .slides section.dark-slide .description {
+            color: #ced4da; /* Un gris más suave para el texto */
+        }
     </style>
 </head>
 <body>
     <div class="reveal">
         <div class="slides">
 
-            <section data-background-color="#21303e" data-auto-animate data-transition="slide" data-background-transition="zoom">
-                <h1 style="color: #f0f4f8; font-size: 3.5em;">CTeI en Colombia</h1>
-                <h2 style="color: #90CAF9;">Una Historia de Transformación Institucional</h2>
-                <p style="color: #e3f2fd; font-size: 0.8em; margin-top: 2em;">De Colciencias a Ministerio</p>
-                <div data-id="box" style="width: 200px; height: 10px; background-color: #f0f4f8; margin: 30px auto;"></div>
+            <section data-background-color="var(--r-dark-background)" class="dark-slide">
+                <h1 style="font-size: 2.5em; letter-spacing: 2px;">LA TRAYECTORIA CTeI EN COLOMBIA</h1>
+                <h2 style="font-weight: 300; color: #90e0ef;">De Colciencias a Ministerio</h2>
             </section>
 
-            <section data-auto-animate data-transition="slide" data-background-transition="zoom">
-                <div data-id="box" style="width: 100px; height: 10px; background-color: #21303e; margin: 30px auto;"></div>
-                <h2>Los Cimientos de la CTeI</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="year">1968</div>
-                        <div class="description"><h3>Nace Colciencias</h3><p>Entidad fundacional para financiar y promover la investigación en Colombia.</p></div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="year">70s-80s</div>
-                        <div class="description"><h3>Primeros Planes Nacionales</h3><p>Búsqueda de dirección estratégica para alinear la ciencia con el desarrollo del país.</p></div>
-                    </div>
-                </div>
-            </section>
-            
-            <section data-auto-animate data-transition="slide" data-background-transition="zoom">
-                <h2>Misiones y Marco Legal</h2>
-                <div class="timeline">
-                    <div class="timeline-item"><div class="year">Fines 80s / Inicios 90s</div><div class="description"><h3>"Misiones de Sabios"</h3><p>Expertos trazan una hoja de ruta, integrando conocimiento, educación y desarrollo.</p></div></div>
-                    <div class="timeline-item"><div class="year">1990</div><div class="description"><h3>Ley 29 de 1990</h3><p>Primer marco legal del sector. Impulsa la consolidación normativa.</p></div></div>
-                    <div class="timeline-item"><div class="year">2009</div><div class="description"><h3>Ley 1286 de 2009</h3><p>Colciencias es elevado a Departamento Administrativo, ganando peso político.</p></div></div>
-                </div>
-            </section>
-
-            <section data-auto-animate data-transition="slide" data-background-transition="zoom">
-                <h2>Medición y la Nueva Demanda</h2>
-                <div class="timeline">
-                    <div class="timeline-item"><div class="year">1998</div><div class="description"><h3>Creación del OCyT</h3><p>Nace el Observatorio Colombiano de Ciencia y Tecnología para medir el impacto.</p></div></div>
-                    <div class="timeline-item"><div class="year">Última Década</div><div class="description"><h3>Fondos de Regalías y Misión 2019</h3><p>Mayor demanda institucional que impulsa la necesidad de un ministerio.</p></div></div>
-                </div>
-            </section>
-
-            <section data-background-color="#21303e" data-auto-animate data-transition="slide" data-background-transition="zoom">
-                <h1 style="color: #BBDEFB;">El Nacimiento del Ministerio</h1>
-                <h2 style="color: #90CAF9;">Ley 1951 de 2019</h2>
-                <p style="color: #e3f2fd; width: 70%; margin: 0 auto; font-size: 1.1em;">
-                    Colciencias se transforma en el **Ministerio de Ciencia, Tecnología e Innovación**.
-                    <br>Un cambio estratégico para ser órgano rector de política pública.
+            <section data-auto-animate>
+                <div class="milestone">1968</div>
+                <h2 data-id="title" class="event-title">Nace Colciencias</h2>
+                <p class="description">
+                    Se funda la entidad que sentó las bases para financiar y promover la investigación científica en el país. El punto de partida.
                 </p>
-                <div data-id="box" style="width: 200px; height: 10px; background-color: #f0f4f8; margin: 30px auto;"></div>
-            </section>
-            
-            <section data-auto-animate data-transition="slide" data-background-transition="zoom">
-                <h2>Misión y Funciones Clave</h2>
-                <p>El Ministerio asume la coordinación para consolidar a Colombia como una sociedad del conocimiento.</p>
-                <ul>
-                    <li>Formulación y coordinación de políticas CTeI.</li>
-                    <li>Fomento a la investigación y desarrollo.</li>
-                    <li>Formación de talento humano de alto nivel.</li>
-                    <li>Diseño de estrategias para socializar la ciencia.</li>
-                </ul>
             </section>
 
-            <section data-auto-animate data-transition="slide" data-background-transition="zoom">
-                <h2>Objetivos Estratégicos Iniciales</h2>
-                <p>Influenciados por la Misión de Sabios, para un futuro más innovador:</p>
-                <ul>
-                    <li>Fortalecer investigación en áreas estratégicas.</li>
-                    <li>Aumentar la inversión en CTeI.</li>
-                    <li>Conectar conocimiento con necesidades del país.</li>
-                    <li>Inspirar vocaciones científicas en nuevas generaciones.</li>
-                </ul>
-            </section>
-
-            <section data-background-color="#21303e" data-auto-animate data-transition="slide" data-background-transition="zoom">
-                <h1 style="color: #f0f4f8;">Hacia una Sociedad del Conocimiento</h1>
-                <p style="color: #90CAF9; width: 80%; margin: 0 auto; font-size: 1.2em;">
-                    La evolución de la CTeI en Colombia es un testimonio de la visión estratégica para el desarrollo del país.
+            <section data-auto-animate>
+                <div class="milestone">70s-80s</div>
+                <h2 data-id="title" class="event-title">Primeros Planes Nacionales</h2>
+                <p class="description">
+                    Se implementan los primeros esfuerzos para dar una dirección estratégica, buscando alinear la ciencia con las necesidades de desarrollo de Colombia.
                 </p>
-                <div data-id="box" style="width: 200px; height: 10px; background-color: #f0f4f8; margin: 30px auto;"></div>
+            </section>
+
+            <section data-auto-animate>
+                <div class="milestone">Fines 80s</div>
+                <h2 data-id="title" class="event-title">Las "Misiones de Sabios"</h2>
+                <p class="description">
+                    Comisiones de expertos trazan una hoja de ruta visionaria, subrayando la urgencia de integrar conocimiento, educación y desarrollo.
+                </p>
+            </section>
+
+            <section data-auto-animate>
+                <div class="milestone">1990</div>
+                <h2 data-id="title" class="event-title">Ley 29 de 1990</h2>
+                <p class="description">
+                    Se establece el primer marco legal formal para la Ciencia y Tecnología, un paso fundamental para la consolidación normativa del sector.
+                </p>
+            </section>
+
+            <section data-auto-animate>
+                <div class="milestone">1998</div>
+                <h2 data-id="title" class="event-title">Creación del OCyT</h2>
+                <p class="description">
+                    Nace el Observatorio Colombiano de Ciencia y Tecnología (OCyT), una pieza clave para medir, seguir y entender el impacto de las políticas públicas.
+                </p>
+            </section>
+
+            <section data-auto-animate>
+                <div class="milestone">2009</div>
+                <h2 data-id="title" class="event-title">Ley 1286 de 2009</h2>
+                <p class="description">
+                    Un hito clave: Colciencias es elevado a la categoría de Departamento Administrativo, otorgándole mayor peso político y autonomía.
+                </p>
+            </section>
+
+            <section data-auto-animate>
+                <div class="milestone">2019</div>
+                <h2 data-id="title" class="event-title">Una Nueva Misión de Sabios</h2>
+                <p class="description">
+                    Una nueva Misión de expertos deja claro que el país necesita una institucionalidad más robusta para enfrentar los desafíos del futuro.
+                </p>
+            </section>
+
+            <section data-background-color="var(--r-dark-background)" class="dark-slide" data-transition="zoom">
+                <div class="milestone">2019</div>
+                <h1 class="event-title">NACE EL MINISTERIO</h1>
+                <p class="description" style="font-size: 1.5em; width: 80%;">
+                    La Ley 1951 transforma a Colciencias en el **Ministerio de Ciencia, Tecnología e Innovación**.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="event-title">Un Nuevo Rol Estratégico</h2>
+                <p class="description">
+                    El Ministerio supera el rol de ser solo una entidad financiadora para convertirse en el **órgano rector de la política pública del sector**, articulando a la academia, el sector productivo y el Estado.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="event-title">Objetivos Estratégicos</h2>
+                <p class="description" style="text-align: left; width: 60%; font-size: 1.1em;">
+                    <strong style="color: var(--r-accent-color);">✓</strong> Fomentar la investigación en áreas clave.<br>
+                    <strong style="color: var(--r-accent-color);">✓</strong> Aumentar la inversión en CTeI.<br>
+                    <strong style="color: var(--r-accent-color);">✓</strong> Conectar el conocimiento con las necesidades reales del país.<br>
+                    <strong style="color: var(--r-accent-color);">✓</strong> Inspirar vocaciones científicas en las nuevas generaciones.
+                </p>
+            </section>
+
+            <section data-background-color="var(--r-dark-background)" class="dark-slide">
+                <h1 style="font-weight: 300;">Hacia una<br><strong style="font-size: 1.8em; color: #90e0ef;">Sociedad del Conocimiento</strong></h1>
             </section>
 
         </div>
@@ -133,17 +179,17 @@
             progress: true,
             history: true,
             center: true,
-            transition: 'slide',
-            backgroundTransition: 'zoom',
+            // Transición más dinámica para el cambio de diapositivas
+            transition: 'convex',
+            backgroundTransition: 'fade',
             
-            // autoSlide: 0,
-            loop: false,
+            // Se mantiene sin avance automático
+            autoSlide: 0, 
 
             multiplex: {
-                // // Asegúrate de que estos valores sean únicos para tu presentación.
-                // No los dejes por defecto.
-                secret: '09876xyz', // ¡Cámbialo por una clave secreta tuya!
-                id: 'presentacion', // ¡Cámbialo por un ID único!
+                // RECUERDA CAMBIAR ESTOS VALORES
+                secret: '09876xyz', 
+                id: 'presentacion', 
                 url: 'https://reveal-js-multiplex-ccjbegmaii.now.sh'
             },
 
@@ -151,7 +197,6 @@
                 RevealNotes,
                 RevealMarkdown,
                 RevealHighlight,
-                // Esto está correcto, carga los scripts necesarios para multiplex
                 { src: 'plugin/multiplex/master.js', async: true },
                 { src: 'plugin/multiplex/client.js', async: true }
             ]
